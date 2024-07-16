@@ -21,7 +21,7 @@ const TransactionsList = () => {
     resource: "transactions",
     ids:
       tableProps?.dataSource
-        ?.map((item) => item?.transaction?.id)
+        ?.map((item) => item?.transaction?.transaction_number)
         .filter(Boolean) ?? [],
     queryOptions: {
       enabled: !!tableProps?.dataSource,
@@ -30,19 +30,23 @@ const TransactionsList = () => {
 
   return (
     <List>
-      <Table {...tableProps} rowKey="id">
+      <Table {...tableProps} rowKey="transaction_number">
         <Table.Column dataIndex="transaction_number" title="Transaction #" />
-        <Table.Column dataIndex="transaction_date" title="Transaction Date" />
+        <Table.Column
+          dataIndex="transaction_date"
+          title="Transaction Date"
+          render={(value) => <DateField value={value} />}
+        />
         <Table.Column dataIndex="transaction_type" title="Type" />
         <Table.Column dataIndex="transaction_status" title="Status" />
+        <Table.Column dataIndex="license_key" title="License Key" />
         <Table.Column dataIndex="quantity" title="Quantity" />
         <Table.Column dataIndex="reference_code" title="Reference Code" />
         <Table.Column dataIndex="bill_customer_name" title="Billing Customer" />
         <Table.Column
-          dataIndex="ship_customer_name"
-          title="Shipping Customer"
+          dataIndex="organization_code"
+          title="Organization Code"
         />
-        <Table.Column dataIndex="creation_date" title="Date Created" />
         <Table.Column
           title="Actions"
           dataIndex="actions"

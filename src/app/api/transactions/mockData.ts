@@ -1,5 +1,6 @@
 export const mockTransactions = [
   {
+    id: 1,
     bill_address1: "123 Main St",
     bill_customer_name: "John Doe Corp",
     creation_date: "2023-01-01",
@@ -16,6 +17,7 @@ export const mockTransactions = [
     transaction_type: "sales",
   },
   {
+    id: 2,
     bill_address1: "456 Elm St",
     bill_customer_name: "Smith Enterprises",
     creation_date: "2023-02-15",
@@ -32,6 +34,7 @@ export const mockTransactions = [
     transaction_type: "purchase",
   },
   {
+    id: 3,
     bill_address1: "789 Oak Ave",
     bill_customer_name: "ABC Corporation",
     creation_date: "2023-03-20",
@@ -48,6 +51,7 @@ export const mockTransactions = [
     transaction_type: "return",
   },
   {
+    id: 4,
     bill_address1: "321 Pine Blvd",
     bill_customer_name: "Tech Solutions Ltd",
     creation_date: "2023-04-25",
@@ -64,6 +68,7 @@ export const mockTransactions = [
     transaction_type: "sales",
   },
   {
+    id: 5,
     bill_address1: "987 Maple Ln",
     bill_customer_name: "Global Ventures",
     creation_date: "2023-05-30",
@@ -80,6 +85,7 @@ export const mockTransactions = [
     transaction_type: "purchase",
   },
   {
+    id: 6,
     bill_address1: "654 Cedar Rd",
     bill_customer_name: "Data Solutions Inc",
     creation_date: "2023-06-10",
@@ -96,6 +102,7 @@ export const mockTransactions = [
     transaction_type: "return",
   },
   {
+    id: 7,
     bill_address1: "234 Walnut Dr",
     bill_customer_name: "Innovative Tech Corp",
     creation_date: "2023-07-15",
@@ -112,6 +119,7 @@ export const mockTransactions = [
     transaction_type: "sales",
   },
   {
+    id: 8,
     bill_address1: "876 Pine Ave",
     bill_customer_name: "Tech Innovations LLC",
     creation_date: "2023-08-20",
@@ -128,6 +136,7 @@ export const mockTransactions = [
     transaction_type: "purchase",
   },
   {
+    id: 9,
     bill_address1: "543 Oak Ln",
     bill_customer_name: "XYZ Tech Solutions",
     creation_date: "2023-09-25",
@@ -144,6 +153,7 @@ export const mockTransactions = [
     transaction_type: "return",
   },
   {
+    id: 10,
     bill_address1: "765 Maple Blvd",
     bill_customer_name: "ABC Software Inc",
     creation_date: "2023-10-30",

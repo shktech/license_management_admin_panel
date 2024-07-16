@@ -50,7 +50,6 @@ export default function RootLayout({
                   }}
                 >
                   {children}
-                  <RefineKbar />
                 </Refine>
               </ColorModeContextProvider>
             </AntdRegistry>

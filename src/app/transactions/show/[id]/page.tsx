@@ -6,15 +6,15 @@ import { Typography } from "antd";
 
 const { Title } = Typography;
 
-export default function BlogPostShow() {
+const TransactionShow = () => {
   const { queryResult } = useShow({});
   const { data, isLoading } = queryResult;
 
   const record = data?.data;
 
-  const { data: categoryData, isLoading: categoryIsLoading } = useOne({
-    resource: "categories",
-    id: record?.category?.id || "",
+  const { data: transactionsData, isLoading: transactionsIsLoading } = useOne({
+    resource: "transactions",
+    id: record?.transactions?.id || "",
     queryOptions: {
       enabled: !!record,
     },
@@ -22,22 +22,26 @@ export default function BlogPostShow() {
 
   return (
     <Show isLoading={isLoading}>
-      <Title level={5}>{"ID"}</Title>
-      <TextField value={record?.id} />
-      <Title level={5}>{"Title"}</Title>
-      <TextField value={record?.title} />
-      <Title level={5}>{"Content"}</Title>
-      <MarkdownField value={record?.content} />
-      <Title level={5}>{"Category"}</Title>
-      <TextField
-        value={
-          categoryIsLoading ? <>Loading...</> : <>{categoryData?.data?.title}</>
-        }
-      />
-      <Title level={5}>{"Status"}</Title>
-      <TextField value={record?.status} />
-      <Title level={5}>{"CreatedAt"}</Title>
-      <DateField value={record?.createdAt} />
+      <Title level={5}>Transaction Number</Title>
+      <TextField value={record?.transaction_number} />
+      <Title level={5}>Transaction Date</Title>
+      <DateField value={record?.transaction_date} />
+      <Title level={5}>Transaction Type</Title>
+      <TextField value={record?.transaction_type} />
+      <Title level={5}>Transaction Status</Title>
+      <TextField value={record?.transaction_status} />
+      <Title level={5}>License Key</Title>
+      <TextField value={record?.license_key} />
+      <Title level={5}>Quantity</Title>
+      <TextField value={record?.quantity} />
+      <Title level={5}>Reference Code</Title>
+      <TextField value={record?.reference_code} />
+      <Title level={5}>Billing Customer</Title>
+      <TextField value={record?.bill_customer_name} />
+      <Title level={5}>Organization Code</Title>
+      <TextField value={record?.organization_code} />
     </Show>
   );
-}
+};
+
+export default TransactionShow;
