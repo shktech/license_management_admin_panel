@@ -18,7 +18,7 @@ const TransactionsList = () => {
   });
 
   const { data: transactionsData, isLoading: transactionsIsLoading } = useMany({
-    resource: "categories",
+    resource: "transactions",
     ids:
       tableProps?.dataSource
         ?.map((item) => item?.transaction?.id)
@@ -31,21 +31,18 @@ const TransactionsList = () => {
   return (
     <List>
       <Table {...tableProps} rowKey="id">
-        <Table.Column dataIndex="transaction-number" title="Transaction #" />
-        <Table.Column dataIndex="transaction-date" title="Transaction Date" />
-        <Table.Column dataIndex="transaction-type" title="Type" />
-        <Table.Column dataIndex="status" title="Status" />
+        <Table.Column dataIndex="transaction_number" title="Transaction #" />
+        <Table.Column dataIndex="transaction_date" title="Transaction Date" />
+        <Table.Column dataIndex="transaction_type" title="Type" />
+        <Table.Column dataIndex="transaction_status" title="Status" />
         <Table.Column dataIndex="quantity" title="Quantity" />
-        <Table.Column dataIndex="reference-code" title="Reference Code" />
+        <Table.Column dataIndex="reference_code" title="Reference Code" />
+        <Table.Column dataIndex="bill_customer_name" title="Billing Customer" />
         <Table.Column
-          dataIndex="billing-customer-name"
-          title="Billing Customer"
-        />
-        <Table.Column
-          dataIndex="shipping-customer-name"
+          dataIndex="ship_customer_name"
           title="Shipping Customer"
         />
-        <Table.Column dataIndex="createdAt" title="Date Created" />
+        <Table.Column dataIndex="creation_date" title="Date Created" />
         <Table.Column
           title="Actions"
           dataIndex="actions"
