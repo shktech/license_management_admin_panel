@@ -11,6 +11,7 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ColorModeContextProvider } from "@contexts/color-mode";
 import { dataProvider } from "@providers/data-provider";
 import "@refinedev/antd/dist/reset.css";
+import { dashboardResources } from "./data/refineResources";
 
 export const metadata: Metadata = {
   title: "Admin Dashboard",
@@ -40,28 +41,7 @@ export default function RootLayout({
                   routerProvider={routerProvider}
                   dataProvider={dataProvider}
                   notificationProvider={useNotificationProvider}
-                  resources={[
-                    {
-                      name: "blog_posts",
-                      list: "/blog-posts",
-                      create: "/blog-posts/create",
-                      edit: "/blog-posts/edit/:id",
-                      show: "/blog-posts/show/:id",
-                      meta: {
-                        canDelete: true,
-                      },
-                    },
-                    {
-                      name: "categories",
-                      list: "/categories",
-                      create: "/categories/create",
-                      edit: "/categories/edit/:id",
-                      show: "/categories/show/:id",
-                      meta: {
-                        canDelete: true,
-                      },
-                    },
-                  ]}
+                  resources={dashboardResources}
                   options={{
                     syncWithLocation: true,
                     warnWhenUnsavedChanges: true,

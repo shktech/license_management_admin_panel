@@ -12,16 +12,16 @@ import {
 import { type BaseRecord, useMany } from "@refinedev/core";
 import { Space, Table } from "antd";
 
-export default function BlogPostList() {
+const TransactionsList = () => {
   const { tableProps } = useTable({
     syncWithLocation: true,
   });
 
-  const { data: categoryData, isLoading: categoryIsLoading } = useMany({
+  const { data: transactionsData, isLoading: transactionsIsLoading } = useMany({
     resource: "categories",
     ids:
       tableProps?.dataSource
-        ?.map((item) => item?.category?.id)
+        ?.map((item) => item?.transaction?.id)
         .filter(Boolean) ?? [],
     queryOptions: {
       enabled: !!tableProps?.dataSource,
@@ -31,35 +31,23 @@ export default function BlogPostList() {
   return (
     <List>
       <Table {...tableProps} rowKey="id">
-        <Table.Column dataIndex="id" title={"ID"} />
-        <Table.Column dataIndex="title" title={"Title"} />
+        <Table.Column dataIndex="transaction-number" title="Transaction #" />
+        <Table.Column dataIndex="transaction-date" title="Transaction Date" />
+        <Table.Column dataIndex="transaction-type" title="Type" />
+        <Table.Column dataIndex="status" title="Status" />
+        <Table.Column dataIndex="quantity" title="Quantity" />
+        <Table.Column dataIndex="reference-code" title="Reference Code" />
         <Table.Column
-          dataIndex="content"
-          title={"Content"}
-          render={(value: any) => {
-            if (!value) return "-";
-            return <MarkdownField value={value.slice(0, 80) + "..."} />;
-          }}
+          dataIndex="billing-customer-name"
+          title="Billing Customer"
         />
         <Table.Column
-          dataIndex={"category"}
-          title={"Category"}
-          render={(value) =>
-            categoryIsLoading ? (
-              <>Loading...</>
-            ) : (
-              categoryData?.data?.find((item) => item.id === value?.id)?.title
-            )
-          }
+          dataIndex="shipping-customer-name"
+          title="Shipping Customer"
         />
-        <Table.Column dataIndex="status" title={"Status"} />
+        <Table.Column dataIndex="createdAt" title="Date Created" />
         <Table.Column
-          dataIndex={["createdAt"]}
-          title={"Created at"}
-          render={(value: any) => <DateField value={value} />}
-        />
-        <Table.Column
-          title={"Actions"}
+          title="Actions"
           dataIndex="actions"
           render={(_, record: BaseRecord) => (
             <Space>
@@ -72,4 +60,6 @@ export default function BlogPostList() {
       </Table>
     </List>
   );
-}
+};
+
+export default TransactionsList;
