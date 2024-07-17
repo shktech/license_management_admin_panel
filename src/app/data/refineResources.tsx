@@ -16,7 +16,7 @@ export const dashboardResources = [
   {
     name: "transactions",
     list: "/transactions",
-    create: "/create",
+    create: "/transactions/create",
     edit: "/transactions/edit/:id",
     show: "/transactions/show/:id",
     meta: {
@@ -33,6 +33,7 @@ export const dashboardResources = [
       parent: "transaction",
       label: "Collection",
       disabled: true,
+      hide: true,
     },
   },
   {
@@ -43,7 +44,7 @@ export const dashboardResources = [
   },
   {
     name: "assets",
-    list: "/master-mgmt/assets",
+    list: "/assets",
     create: "/assets/create",
     edit: "/assets/edit/:id",
     show: "/assets/show/:id",
@@ -56,7 +57,7 @@ export const dashboardResources = [
   },
   {
     name: "products",
-    list: "/master-mgmt/products",
+    list: "/products",
     create: "/products/create",
     edit: "/products/edit/:id",
     show: "/products/show/:id",
@@ -69,11 +70,12 @@ export const dashboardResources = [
   },
   {
     name: "partners",
-    list: "/master-mgmt/partners",
+    list: "/partners",
     meta: {
       label: "Partners",
       parent: "mastermgmt",
       disabled: true,
+      hide: true,
     },
   },
   {
@@ -81,6 +83,7 @@ export const dashboardResources = [
     meta: {
       label: "Maintenance",
       disabled: true,
+      hide: true,
     },
   },
   {
@@ -120,6 +123,7 @@ export const dashboardResources = [
     meta: {
       label: "Reports",
       disabled: true,
+      hide: true,
     },
   },
   {
@@ -151,6 +155,7 @@ export const dashboardResources = [
     meta: {
       label: "Settings",
       disabled: true,
+      hide: true,
     },
   },
   {
