@@ -1,7 +1,7 @@
 "use client";
 
 import { Create, useForm, useSelect } from "@refinedev/antd";
-import { Form, Input, Select } from "antd";
+import { DatePicker, Form, Input, Select } from "antd";
 import {
   transactionsActionsOptions,
   transactionsStatusOptions,
@@ -104,7 +104,7 @@ export default function BlogPostCreate() {
             },
           ]}
         >
-          <Input />
+          <DatePicker style={{ width: "100%" }} />
         </Form.Item>
         <Form.Item
           label="Transaction Number"

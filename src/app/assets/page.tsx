@@ -18,10 +18,21 @@ export default function CategoryList() {
   return (
     <List>
       <Table {...tableProps} rowKey="id">
-        <Table.Column dataIndex="id" title={"ID"} />
-        <Table.Column dataIndex="title" title={"title"} />
+        <Table.Column dataIndex="active_seats" title="Active Seats" />
+        <Table.Column dataIndex="vendor_name" title="Vendor Name" />
+        <Table.Column dataIndex="ship_customer_name" title="Customer Name" />
+        <Table.Column dataIndex="license_key" title="License Key" />
+        <Table.Column dataIndex="organization_code" title="Organization Code" />
         <Table.Column
-          title={"Actions"}
+          dataIndex="transaction_number"
+          title="Transaction Number"
+        />
+        <Table.Column dataIndex="transaction_date" title="Transaction Date" />
+        <Table.Column dataIndex="start_date" title="Start Date" />
+        <Table.Column dataIndex="end_date" title="End Date" />
+        <Table.Column dataIndex="active_seats" title="Active Seats" />
+        <Table.Column
+          title="Actions"
           dataIndex="actions"
           render={(_, record: BaseRecord) => (
             <Space>
