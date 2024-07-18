@@ -11,7 +11,7 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ColorModeContextProvider } from "@contexts/color-mode";
 import { dataProvider } from "@providers/data-provider";
 import "@refinedev/antd/dist/reset.css";
-import { dashboardResources } from "./data/refineResources";
+import { dashboardResources } from "../data/refineResources";
 
 export const metadata: Metadata = {
   title: "Admin Dashboard",

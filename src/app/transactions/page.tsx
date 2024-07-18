@@ -15,6 +15,17 @@ import { Space, Table } from "antd";
 const TransactionsList = () => {
   const { tableProps } = useTable({
     syncWithLocation: true,
+    pagination: {
+      pageSize: 5,
+    },
+    sorters: {
+      initial: [
+        {
+          field: "transaction_type",
+          order: "asc",
+        },
+      ],
+    },
   });
 
   const { data: transactionsData, isLoading: transactionsIsLoading } = useMany({
@@ -43,10 +54,7 @@ const TransactionsList = () => {
         <Table.Column dataIndex="quantity" title="Quantity" />
         <Table.Column dataIndex="reference_code" title="Reference Code" />
         <Table.Column dataIndex="bill_customer_name" title="Billing Customer" />
-        <Table.Column
-          dataIndex="organization_code"
-          title="Organization Code"
-        />
+        <Table.Column dataIndex="organization_code" title="Organization Code" />
         <Table.Column
           title="Actions"
           dataIndex="actions"

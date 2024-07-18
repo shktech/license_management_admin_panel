@@ -3,4 +3,6 @@ const nextConfig = {
   transpilePackages: ["@refinedev/antd"],
 };
 
+
+
 export default nextConfig;

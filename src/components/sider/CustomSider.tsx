@@ -1,6 +1,6 @@
 "use client";
 import { ThemedSiderV2 } from "@refinedev/antd";
-import styles from "./styles/CustomSidebar.module.css";
+import styles from "../styles/CustomSidebar.module.css";
 
 const CustomSider = () => {
   return (

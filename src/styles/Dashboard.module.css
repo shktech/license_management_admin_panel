@@ -1,0 +1,16 @@
+.dashboardPage {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+.dashboardPage * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.dashboardCardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  margin-top: 20px;
+}
