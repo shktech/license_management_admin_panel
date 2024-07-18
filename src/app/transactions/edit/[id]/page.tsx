@@ -1,17 +1,39 @@
 "use client";
 
-import { Edit, useForm, useSelect } from "@refinedev/antd";
+import { Edit, useForm } from "@refinedev/antd";
 import { Form, Input, Select } from "antd";
+import {
+  transactionsActionsOptions,
+  transactionsStatusOptions,
+  transactionsTypeOptions,
+} from "../../data/transactionsData";
 
 const TransactionEdit = () => {
   const { formProps, saveButtonProps, queryResult } = useForm({});
 
-  const transactionsData = queryResult?.data?.data;
+  const renderTransactionActionsOptions = transactionsActionsOptions.map(
+    (option) => (
+      <Select.Option key={option.value} value={option.value}>
+        {option.label}
+      </Select.Option>
+    )
+  );
 
-  const { selectProps: SelectProps } = useSelect({
-    resource: "transactions",
-    defaultValue: transactionsData?.id,
-  });
+  const renderTransactionsStatusOptions = transactionsStatusOptions.map(
+    (option) => (
+      <Select.Option key={option.value} value={option.value}>
+        {option.label}
+      </Select.Option>
+    )
+  );
+
+  const renderTransactionsTypeOptions = transactionsTypeOptions.map(
+    (option) => (
+      <Select.Option key={option.value} value={option.value}>
+        {option.label}
+      </Select.Option>
+    )
+  );
 
   return (
     <Edit saveButtonProps={saveButtonProps}>
@@ -69,7 +91,9 @@ const TransactionEdit = () => {
             },
           ]}
         >
-          <Input />
+          <Select placeholder="Select a transaction action">
+            {renderTransactionActionsOptions}
+          </Select>
         </Form.Item>
         <Form.Item
           label="Transaction Date"
@@ -102,7 +126,9 @@ const TransactionEdit = () => {
             },
           ]}
         >
-          <Input />
+          <Select placeholder="Select a transaction status">
+            {renderTransactionsStatusOptions}
+          </Select>
         </Form.Item>
         <Form.Item
           label="Transaction Type"
@@ -113,7 +139,9 @@ const TransactionEdit = () => {
             },
           ]}
         >
-          <Select {...SelectProps} />
+          <Select placeholder="Select a transaction type">
+            {renderTransactionsTypeOptions}
+          </Select>
         </Form.Item>
       </Form>
     </Edit>

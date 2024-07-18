@@ -12,3 +12,26 @@ export async function GET(
   );
   return NextResponse.json(transaction);
 }
+
+export async function PATCH(
+  req: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  const updatedTransaction = req.body as any;
+  const index = transactions.findIndex(
+    (transaction) => transaction.id === +params.id
+  );
+  transactions[index] = updatedTransaction;
+  return NextResponse.json(updatedTransaction);
+}
+
+export async function DELETE(
+  req: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  const index = transactions.findIndex(
+    (transaction) => transaction.id === +params.id
+  );
+  transactions.splice(index, 1);
+  return NextResponse.json({ id: +params.id });
+}

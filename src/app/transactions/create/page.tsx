@@ -2,20 +2,45 @@
 
 import { Create, useForm, useSelect } from "@refinedev/antd";
 import { Form, Input, Select } from "antd";
+import {
+  transactionsActionsOptions,
+  transactionsStatusOptions,
+  transactionsTypeOptions,
+} from "../data/transactionsData";
 
 export default function BlogPostCreate() {
   const { formProps, saveButtonProps } = useForm({});
 
-  const { selectProps: categorySelectProps } = useSelect({
-    resource: "categories",
-  });
+  const renderTransactionActionsOptions = transactionsActionsOptions.map(
+    (option) => (
+      <Select.Option key={option.value} value={option.value}>
+        {option.label}
+      </Select.Option>
+    )
+  );
+
+  const renderTransactionsStatusOptions = transactionsStatusOptions.map(
+    (option) => (
+      <Select.Option key={option.value} value={option.value}>
+        {option.label}
+      </Select.Option>
+    )
+  );
+
+  const renderTransactionsTypeOptions = transactionsTypeOptions.map(
+    (option) => (
+      <Select.Option key={option.value} value={option.value}>
+        {option.label}
+      </Select.Option>
+    )
+  );
 
   return (
     <Create saveButtonProps={saveButtonProps}>
       <Form {...formProps} layout="vertical">
         <Form.Item
-          label={"Title"}
-          name={["title"]}
+          label="Billing address"
+          name="bill_address1"
           rules={[
             {
               required: true,
@@ -25,46 +50,98 @@ export default function BlogPostCreate() {
           <Input />
         </Form.Item>
         <Form.Item
-          label={"Content"}
-          name="content"
+          label="Billing Customer name"
+          name="bill_customer_name"
           rules={[
             {
               required: true,
             },
           ]}
         >
-          <Input.TextArea rows={5} />
+          <Input />
         </Form.Item>
         <Form.Item
-          label={"Category"}
-          name={["category", "id"]}
+          label="License Key"
+          name="license_key"
           rules={[
             {
               required: true,
             },
           ]}
         >
-          <Select {...categorySelectProps} />
+          <Input />
         </Form.Item>
         <Form.Item
-          label={"Status"}
-          name={["status"]}
-          initialValue={"draft"}
+          label="Quantity"
+          name="quantity"
           rules={[
             {
               required: true,
             },
           ]}
         >
-          <Select
-            defaultValue={"draft"}
-            options={[
-              { value: "draft", label: "Draft" },
-              { value: "published", label: "Published" },
-              { value: "rejected", label: "Rejected" },
-            ]}
-            style={{ width: 120 }}
-          />
+          <Input />
+        </Form.Item>
+        <Form.Item
+          label="Transaction Action"
+          name="transaction_action"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Select placeholder="Select a transaction action">
+            {renderTransactionActionsOptions}
+          </Select>
+        </Form.Item>
+        <Form.Item
+          label="Transaction Date"
+          name="transaction_date"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          label="Transaction Number"
+          name="transaction_number"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          label="Transaction Status"
+          name="transaction_status"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Select placeholder="Select a transaction status">
+            {renderTransactionsStatusOptions}
+          </Select>
+        </Form.Item>
+        <Form.Item
+          label="Transaction Type"
+          name="transaction_type"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Select placeholder="Select a transaction type">
+            {renderTransactionsTypeOptions}
+          </Select>
         </Form.Item>
       </Form>
     </Create>
