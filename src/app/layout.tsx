@@ -14,7 +14,7 @@ import "@refinedev/antd/dist/reset.css";
 import { dashboardResources } from "../data/refineResources";
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard",
+  title: "License Manager",
   description: "Admin Dashboard to manage your license keys",
   icons: {
     icon: "/favicon.ico",
