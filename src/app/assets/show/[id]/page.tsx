@@ -3,7 +3,7 @@
 import { Show, TextField } from "@refinedev/antd";
 import { useShow } from "@refinedev/core";
 import { Typography } from "antd";
-import AssetsDetailsList from "../../assets_details/AssetsDetailsList";
+import AssetsDetailsList from "./assets_details/AssetsDetailsList";
 
 const { Title } = Typography;
 

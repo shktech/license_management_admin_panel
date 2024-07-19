@@ -45,6 +45,7 @@ const AssetsDetailsList = () => {
                 size="small"
                 recordItemId={record.id}
                 resource="assets_details"
+                meta={{ detailsid: record.id, assetid: id }}
               />
               <DeleteButton hideText size="small" recordItemId={record.id} />
             </Space>
