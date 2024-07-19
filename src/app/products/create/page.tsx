@@ -4,7 +4,7 @@ import { Create, useForm } from "@refinedev/antd";
 import { Form } from "antd";
 import ProductsFormItems from "../ProductsFormItems";
 
-export default function CategoryCreate() {
+export default function ProductCreate() {
   const { formProps, saveButtonProps } = useForm({});
 
   return (

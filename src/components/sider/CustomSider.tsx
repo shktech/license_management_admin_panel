@@ -1,6 +1,7 @@
 "use client";
 import { ThemedSiderV2 } from "@refinedev/antd";
 import styles from "../styles/CustomSidebar.module.css";
+import { KeyOutlined } from "@ant-design/icons";
 
 const CustomSider = () => {
   return (
@@ -8,7 +9,7 @@ const CustomSider = () => {
       fixed
       Title={() => (
         <div className={styles.sidebarTitle}>
-          <div className={styles.sidebarLogo} />
+          <KeyOutlined style={{ color: "var(--primary)", fontSize: 20 }} />
           <h4>License Manager</h4>
         </div>
       )}

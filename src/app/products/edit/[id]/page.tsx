@@ -5,7 +5,7 @@ import { Edit, useForm } from "@refinedev/antd";
 import { Form } from "antd";
 import dayjs from "dayjs";
 
-export default function CategoryEdit() {
+export default function ProductEdit() {
   const { formProps, saveButtonProps, queryResult } = useForm({});
 
   const formInit = {

@@ -2,8 +2,13 @@
 // src/LoginForm.js
 import React from "react";
 import { Form, Input, Button } from "antd";
-import { UserOutlined, LockOutlined, MailOutlined } from "@ant-design/icons";
-import styles from "../styles/AuthForm.module.css";
+import {
+  UserOutlined,
+  LockOutlined,
+  MailOutlined,
+  KeyOutlined,
+} from "@ant-design/icons";
+import styles from "../../styles/AuthForm.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -17,7 +22,10 @@ const RegisterPage = () => {
 
   return (
     <div className={styles.authPage}>
-      <h3>Admin Dashboard App</h3>
+      <div className={styles.titles}>
+        <KeyOutlined style={{ color: "var(--primary)", fontSize: 30 }} />
+        <h3>Admin Dashboard App</h3>
+      </div>
       <div className={styles.authContainer}>
         <Form
           name="normal_login"
@@ -26,7 +34,6 @@ const RegisterPage = () => {
           onFinish={onFinish}
           style={{ width: "100%" }}
         >
-          <div className={styles.logo} />
           <h4>Register</h4>
           <Form.Item
             name="fullname"

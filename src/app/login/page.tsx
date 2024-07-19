@@ -1,14 +1,12 @@
 "use client";
-// src/LoginForm.js
 import React from "react";
 import { Form, Input, Button, Checkbox } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import styles from "../styles/AuthForm.module.css";
+import { UserOutlined, LockOutlined, KeyOutlined } from "@ant-design/icons";
+import styles from "../../styles/AuthForm.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
-
   const router = useRouter();
 
   const onFinish = (values: any) => {
@@ -18,7 +16,10 @@ const LoginPage = () => {
 
   return (
     <div className={styles.authPage}>
-      <h3>Admin Dashboard App</h3>
+      <div className={styles.titles}>
+        <KeyOutlined style={{ color: "var(--primary)", fontSize: 30 }} />
+        <h3>Admin Dashboard App</h3>
+      </div>
       <div className={styles.authContainer}>
         <Form
           name="normal_login"
@@ -27,7 +28,6 @@ const LoginPage = () => {
           onFinish={onFinish}
           style={{ width: "100%" }}
         >
-          <div className={styles.logo} />
           <h4>Log in</h4>
           <Form.Item
             name="email"

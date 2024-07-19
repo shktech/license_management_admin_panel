@@ -4,7 +4,7 @@ import { Create, useForm } from "@refinedev/antd";
 import TransactionFormItems from "../TransactionFormItems";
 import { Form } from "antd";
 
-export default function BlogPostCreate() {
+export default function TransactionCreate() {
   const { formProps, saveButtonProps } = useForm({});
 
   return (
