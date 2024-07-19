@@ -2,19 +2,20 @@
 
 import { Show, TextField } from "@refinedev/antd";
 import { useShow } from "@refinedev/core";
-import { List, Table, Typography } from "antd";
+import { Typography } from "antd";
+import AssetsDetailsList from "../../assets_details/AssetsDetailsList";
 
 const { Title } = Typography;
 
 export default function AssetShow() {
-  const { queryResult } = useShow({});
+  const { queryResult } = useShow();
   const { data, isLoading } = queryResult;
 
   const record = data?.data;
 
   return (
     <>
-      <Show isLoading={isLoading}>
+      <Show isLoading={isLoading} title="Asset (Asset Details Below)">
         <Title level={5}>ID</Title>
         <TextField value={record?.id} />
         <Title level={5}>Active Seats</Title>
@@ -74,31 +75,8 @@ export default function AssetShow() {
         <Title level={5}>Vendor Part Number</Title>
         <TextField value={record?.vendor_part_number} />
       </Show>
-      <List style={{marginTop: 30}}>
-        <Table rowKey="id">
-          <Table.Column dataIndex="action" title="Action" />
-          <Table.Column dataIndex="asset_id" title="Asset ID" />
-          <Table.Column dataIndex="end_date" title="End Date" />
-          <Table.Column dataIndex="license_key" title="License Key" />
-          <Table.Column
-            dataIndex="license_transaction_id"
-            title="License Transaction ID"
-          />
-          <Table.Column dataIndex="ocs_part_id" title="OCS Part ID" />
-          <Table.Column dataIndex="osc_part_number" title="OSC Part Number" />
-          <Table.Column dataIndex="seat_number" title="Seat Number" />
-          <Table.Column dataIndex="start_date" title="Start Date" />
-          <Table.Column dataIndex="transaction_date" title="Transaction Date" />
-          <Table.Column
-            dataIndex="transaction_number"
-            title="Transaction Number"
-          />
-          <Table.Column
-            dataIndex="vendor_part_number"
-            title="Vendor Part Number"
-          />
-        </Table>
-      </List>
+      <div style={{ height: 30 }} />
+      <AssetsDetailsList />
     </>
   );
 }

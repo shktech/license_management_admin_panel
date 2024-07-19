@@ -1,6 +1,6 @@
 export const mockAssets = [
   {
-    id: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    id: "660e8400-e29b-41d4-a716-100000",
     active_seats: 50,
     created_by: 1,
     creation_date: "2024-01-15",
@@ -31,7 +31,7 @@ export const mockAssets = [
     vendor_part_number: "VEND-2024-01",
   },
   {
-    id: "b2c3d4e5-f678-9012-bcde-f23456789012",
+    id: "660e8400-e29b-41d4-a716-111111",
     active_seats: 75,
     created_by: 3,
     creation_date: "2024-02-20",
@@ -62,7 +62,7 @@ export const mockAssets = [
     vendor_part_number: "VEND-2024-02",
   },
   {
-    id: "c3d4e5f6-7890-1234-cdef-567890123456",
+    id: "660e8400-e29b-41d4-a716-199999",
     active_seats: 30,
     created_by: 5,
     creation_date: "2024-03-10",
@@ -93,7 +93,7 @@ export const mockAssets = [
     vendor_part_number: "VEND-2024-03",
   },
   {
-    id: "d4e5f678-9012-3456-def0-678901234567",
+    id: "660e8400-e29b-41d4-a716-122222",
     active_seats: 100,
     created_by: 7,
     creation_date: "2024-04-01",
@@ -124,7 +124,7 @@ export const mockAssets = [
     vendor_part_number: "VEND-2024-04",
   },
   {
-    id: "e5f67890-1234-5678-ef01-234567890123",
+    id: "660e8400-e29b-41d4-a716-133333",
     active_seats: 45,
     created_by: 9,
     creation_date: "2024-05-05",
@@ -155,7 +155,7 @@ export const mockAssets = [
     vendor_part_number: "VEND-2024-05",
   },
   {
-    id: "f6789012-3456-7890-ef23-456789012345",
+    id: "660e8400-e29b-41d4-a716-144444",
     active_seats: 60,
     created_by: 11,
     creation_date: "2024-06-15",
@@ -186,7 +186,7 @@ export const mockAssets = [
     vendor_part_number: "VEND-2024-06",
   },
   {
-    id: "g7890123-4567-8901-2345-678901234567",
+    id: "660e8400-e29b-41d4-a716-155555",
     active_seats: 85,
     created_by: 13,
     creation_date: "2024-07-20",
@@ -217,7 +217,7 @@ export const mockAssets = [
     vendor_part_number: "VEND-2024-07",
   },
   {
-    id: "h8901234-5678-9012-3456-789012345678",
+    id: "660e8400-e29b-41d4-a716-166666",
     active_seats: 40,
     created_by: 15,
     creation_date: "2024-08-10",
@@ -248,7 +248,7 @@ export const mockAssets = [
     vendor_part_number: "VEND-2024-08",
   },
   {
-    id: "i9012345-6789-0123-4567-890123456789",
+    id: "660e8400-e29b-41d4-a716-177777",
     active_seats: 95,
     created_by: 17,
     creation_date: "2024-09-01",
@@ -279,7 +279,7 @@ export const mockAssets = [
     vendor_part_number: "VEND-2024-09",
   },
   {
-    id: "j0123456-7890-1234-5678-901234567890",
+    id: "660e8400-e29b-41d4-a716-188888",
     active_seats: 55,
     created_by: 19,
     creation_date: "2024-10-01",

@@ -1,12 +1,12 @@
 export const mockAssetsDetails = [
   {
     action: "create",
-    asset_id: "550e8400-e29b-41d4-a716-446655440000",
+    asset_id: "660e8400-e29b-41d4-a716-100000",
     created_by: 1,
     creation_date: "2024-07-01",
     duration: "1 year",
     end_date: "2025-07-01",
-    id: "123e4567-e89b-12d3-a456-426614174000",
+    id: "d-100",
     last_update_date: "2024-07-10",
     last_updated_by: 2,
     license_key: "ABC123XYZ",
@@ -23,7 +23,7 @@ export const mockAssetsDetails = [
   },
   {
     action: "update",
-    asset_id: "550e8400-e29b-41d4-a716-446655440001",
+    asset_id: "660e8400-e29b-41d4-a716-100000",
     created_by: 2,
     creation_date: "2024-06-01",
     duration: "2 years",
@@ -45,7 +45,7 @@ export const mockAssetsDetails = [
   },
   {
     action: "delete",
-    asset_id: "550e8400-e29b-41d4-a716-446655440002",
+    asset_id: "660e8400-e29b-41d4-a716-199999",
     created_by: 3,
     creation_date: "2024-05-01",
     duration: "6 months",
@@ -67,7 +67,7 @@ export const mockAssetsDetails = [
   },
   {
     action: "renew",
-    asset_id: "550e8400-e29b-41d4-a716-446655440003",
+    asset_id: "660e8400-e29b-41d4-a716-100000",
     created_by: 4,
     creation_date: "2024-04-01",
     duration: "3 years",
@@ -89,7 +89,7 @@ export const mockAssetsDetails = [
   },
   {
     action: "activate",
-    asset_id: "550e8400-e29b-41d4-a716-446655440004",
+    asset_id: "660e8400-e29b-41d4-a716-100000",
     created_by: 5,
     creation_date: "2024-03-01",
     duration: "5 years",
@@ -111,7 +111,7 @@ export const mockAssetsDetails = [
   },
   {
     action: "suspend",
-    asset_id: "660e8400-e29b-41d4-a716-446655440005",
+    asset_id: "660e8400-e29b-41d4-a716-11111111",
     created_by: 6,
     creation_date: "2024-02-01",
     duration: "1 month",
@@ -133,7 +133,7 @@ export const mockAssetsDetails = [
   },
   {
     action: "deactivate",
-    asset_id: "660e8400-e29b-41d4-a716-446655440006",
+    asset_id: "660e8400-e29b-41d4-a716-11111111",
     created_by: 7,
     creation_date: "2024-01-01",
     duration: "2 months",
@@ -155,7 +155,7 @@ export const mockAssetsDetails = [
   },
   {
     action: "renew",
-    asset_id: "660e8400-e29b-41d4-a716-446655440007",
+    asset_id: "660e8400-e29b-41d4-a716-11111111",
     created_by: 8,
     creation_date: "2023-12-01",
     duration: "6 months",
@@ -177,7 +177,7 @@ export const mockAssetsDetails = [
   },
   {
     action: "create",
-    asset_id: "660e8400-e29b-41d4-a716-446655440008",
+    asset_id: "660e8400-e29b-41d4-a716-11111111",
     created_by: 9,
     creation_date: "2023-11-01",
     duration: "1 year",
@@ -199,7 +199,7 @@ export const mockAssetsDetails = [
   },
   {
     action: "update",
-    asset_id: "660e8400-e29b-41d4-a716-446655440009",
+    asset_id: "660e8400-e29b-41d4-a716-11111111",
     created_by: 10,
     creation_date: "2023-10-01",
     duration: "3 years",

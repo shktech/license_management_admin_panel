@@ -84,6 +84,20 @@ export const dashboardResources = [
     },
   },
   {
+    name: "assets_details",
+    list: "/assets/show/:id",
+    create: "/assets/show/:id/assets_details/create",
+    edit: "/assets/show/:id/assets_details/edit/:id",
+    show: "/assets/show/:id/assets_details/show/:id",
+    meta: {
+      canDelete: true,
+      label: "Assets Details",
+      parent: "assets",
+      hide: true,
+      warnWhenUnsavedChanges: true,
+    },
+  },
+  {
     name: "products",
     list: "/products",
     create: "/products/create",
