@@ -39,7 +39,13 @@ const AssetsDetailsList = () => {
           dataIndex="actions"
           render={(_, record: BaseRecord) => (
             <Space>
-              <EditButton hideText size="small" recordItemId={record.id} />
+              <EditButton
+                hideText
+                size="small"
+                recordItemId={record.id}
+                resource="assets_details"
+                meta={{ detailsid: record.id, assetid: id }}
+              />
               <ShowButton
                 hideText
                 size="small"
@@ -47,7 +53,13 @@ const AssetsDetailsList = () => {
                 resource="assets_details"
                 meta={{ detailsid: record.id, assetid: id }}
               />
-              <DeleteButton hideText size="small" recordItemId={record.id} />
+              <DeleteButton
+                hideText
+                size="small"
+                recordItemId={record.id}
+                resource="assets_details"
+                meta={{ detailsid: record.id, assetid: id }}
+              />
             </Space>
           )}
         />

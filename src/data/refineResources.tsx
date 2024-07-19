@@ -86,8 +86,8 @@ export const dashboardResources = [
   {
     name: "assets_details",
     list: "/assets/show/:id",
-    create: "/assets/show/:id/assets_details/create",
-    edit: "/assets/show/:id/assets_details/edit/:id",
+    create: "/assets/show/:assetid/assets_details/create",
+    edit: "/assets/show/:assetid/assets_details/edit/:detailsid",
     show: "/assets/show/:assetid/assets_details/show/:detailsid",
     meta: {
       canDelete: true,

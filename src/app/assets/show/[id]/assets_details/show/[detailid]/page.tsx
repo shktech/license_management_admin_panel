@@ -4,17 +4,19 @@ import { Show, TextField } from "@refinedev/antd";
 import { useShow } from "@refinedev/core";
 import { Typography } from "antd";
 import { useParams } from "next/navigation";
+const { Title } = Typography;
 
 const ShowAssetDetailPage = () => {
   const { id, detailid } = useParams();
   const { queryResult } = useShow({
     resource: `assets/${id}/assets_details`,
-    id: detailid,
+    id: detailid.toString(),
   });
   const { data, isLoading } = queryResult;
+  console.log(queryResult);
 
   const record = data?.data;
-  const { Title } = Typography;
+
   return (
     <Show isLoading={isLoading} title="Asset (Asset Details Below)">
       <Title level={5}>Action</Title>
