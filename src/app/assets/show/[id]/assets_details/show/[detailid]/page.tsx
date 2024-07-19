@@ -3,9 +3,14 @@
 import { Show, TextField } from "@refinedev/antd";
 import { useShow } from "@refinedev/core";
 import { Typography } from "antd";
+import { useParams } from "next/navigation";
 
 const ShowAssetDetailPage = () => {
-  const { queryResult } = useShow();
+  const { id, detailid } = useParams();
+  const { queryResult } = useShow({
+    resource: `assets/${id}/assets_details`,
+    id: detailid,
+  });
   const { data, isLoading } = queryResult;
 
   const record = data?.data;
