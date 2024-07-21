@@ -21,7 +21,7 @@ export default function AssetEdit() {
   return (
     <Edit saveButtonProps={saveButtonProps}>
       <Form {...formProps} layout="vertical" initialValues={formInit}>
-        <AssetsFormItems />
+        <AssetsFormItems isEditing />
       </Form>
     </Edit>
   );

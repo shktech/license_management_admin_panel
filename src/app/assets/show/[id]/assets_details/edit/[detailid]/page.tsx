@@ -4,14 +4,15 @@ import { useParams } from "next/navigation";
 import AssetsDetailsFormItems from "../../AssetsDetailsFormItems";
 import { Edit, useForm } from "@refinedev/antd";
 import dayjs from "dayjs";
+import { Navigate } from "react-router-dom";
 
 const EditAssetDetailsPage = () => {
   const { id, detailid } = useParams();
   const { formProps, saveButtonProps, queryResult } = useForm({
     resource: `assets/${id}/assets_details`,
     id: detailid.toString(),
+    action: "edit",
   });
-  console.log(queryResult);
 
   const formInit = {
     ...queryResult?.data?.data,
@@ -22,10 +23,20 @@ const EditAssetDetailsPage = () => {
     transaction_date: dayjs(),
   };
 
+  if (queryResult?.isLoading) return <div>Loading...</div>;
+
   return (
-    <Edit saveButtonProps={saveButtonProps}>
+    <Edit
+      saveButtonProps={saveButtonProps}
+      deleteButtonProps={{
+        recordItemId: detailid.toString(),
+        resource: `assets/${id}/assets_details`,
+        meta: { assetid: id },
+        onSuccess: () => window.location.replace(`/assets/show/${id}`),
+      }}
+    >
       <Form {...formProps} layout="vertical" initialValues={formInit}>
-        <AssetsDetailsFormItems />
+        <AssetsDetailsFormItems isEditing />
       </Form>
     </Edit>
   );

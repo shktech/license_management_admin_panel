@@ -1,6 +1,10 @@
 import { DatePicker, Form, Input } from "antd";
 
-const AssetsFormItems = () => {
+interface AssetsFormItemsProps {
+  isEditing: boolean;
+}
+
+const AssetsFormItems = ({ isEditing = false }: AssetsFormItemsProps) => {
   return (
     <>
       <Form.Item
@@ -24,7 +28,11 @@ const AssetsFormItems = () => {
         name="creation_date"
         rules={[{ required: true }]}
       >
-        <DatePicker style={{ width: "100%" }} format={"YYYY-MM-DD"} />
+        <DatePicker
+          style={{ width: "100%" }}
+          format={"YYYY-MM-DD"}
+          disabled={isEditing}
+        />
       </Form.Item>
 
       <Form.Item label="Duration" name="duration" rules={[{ required: true }]}>
