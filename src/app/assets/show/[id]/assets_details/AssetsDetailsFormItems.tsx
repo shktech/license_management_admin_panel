@@ -1,10 +1,20 @@
-import { DatePicker, Form, Input, InputNumber } from "antd";
+import { assetsDetailsLicenseStatusOptions } from "@app/assets/data/assetsDetailsData";
+import { DatePicker, Form, Input, InputNumber, Select } from "antd";
 
 interface AssetsDetailsFormItemsProps {
   isEditing: boolean;
 }
 
 const AssetsDetailsFormItems = ({ isEditing = false }) => {
+
+  const renderAssetsDetailsLicenseStatusOptions = assetsDetailsLicenseStatusOptions?.map(
+    (option) => (
+      <Select.Option key={option.value} value={option.value}>
+        {option.label}
+      </Select.Option>
+    )
+  );
+
   return (
     <>
       <Form.Item
@@ -14,7 +24,7 @@ const AssetsDetailsFormItems = ({ isEditing = false }) => {
       >
         <Input />
       </Form.Item>
-      {/* 
+
       <Form.Item
         label="Asset ID"
         name="asset_id"
@@ -125,7 +135,9 @@ const AssetsDetailsFormItems = ({ isEditing = false }) => {
           { required: true, message: "Please enter the OSC license status" },
         ]}
       >
-        <Input />
+        <Select placeholder="Select a license status">
+          {renderAssetsDetailsLicenseStatusOptions}
+        </Select>
       </Form.Item>
 
       <Form.Item
@@ -181,7 +193,7 @@ const AssetsDetailsFormItems = ({ isEditing = false }) => {
         ]}
       >
         <InputNumber />
-      </Form.Item> */}
+      </Form.Item>
     </>
   );
 };
