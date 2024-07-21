@@ -17,7 +17,7 @@ export default function ProductEdit() {
   return (
     <Edit saveButtonProps={saveButtonProps}>
       <Form {...formProps} layout="vertical" initialValues={formInit}>
-        <ProductsFormItems />
+        <ProductsFormItems isEditing/>
       </Form>
     </Edit>
   );

@@ -5,7 +5,11 @@ import {
   transactionsTypeOptions,
 } from "./data/transactionsData";
 
-const TransactionFormItems = () => {
+interface TransactionFormItemsProps {
+  isEditing?: boolean;
+}
+
+const TransactionFormItems = ({ isEditing }: TransactionFormItemsProps) => {
   const renderTransactionActionsOptions = transactionsActionsOptions.map(
     (option) => (
       <Select.Option key={option.value} value={option.value}>
@@ -165,7 +169,11 @@ const TransactionFormItems = () => {
         name="creation_date"
         rules={[{ required: true }]}
       >
-        <DatePicker style={{ width: "100%" }} format={"YYYY-MM-DD"} />
+        <DatePicker
+          style={{ width: "100%" }}
+          format={"YYYY-MM-DD"}
+          disabled={isEditing}
+        />
       </Form.Item>
 
       <Form.Item label="Duration" name="duration" rules={[{ required: true }]}>
@@ -176,11 +184,7 @@ const TransactionFormItems = () => {
         <DatePicker style={{ width: "100%" }} format={"YYYY-MM-DD"} />
       </Form.Item>
 
-      <Form.Item
-        label="Error Message"
-        name="error_message"
-        rules={[{ required: true }]}
-      >
+      <Form.Item label="Error Message" name="error_message">
         <Input />
       </Form.Item>
 
@@ -268,11 +272,7 @@ const TransactionFormItems = () => {
         <Input />
       </Form.Item>
 
-      <Form.Item
-        label="Shipping Address 2"
-        name="ship_address2"
-        rules={[{ required: true }]}
-      >
+      <Form.Item label="Shipping Address 2" name="ship_address2">
         <Input />
       </Form.Item>
 

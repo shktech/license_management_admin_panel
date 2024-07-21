@@ -1,4 +1,4 @@
-import { DatePicker, Form, Input } from "antd";
+import { DatePicker, Form, Input, InputNumber } from "antd";
 
 interface AssetsFormItemsProps {
   isEditing?: boolean;
@@ -12,7 +12,7 @@ const AssetsFormItems = ({ isEditing = false }: AssetsFormItemsProps) => {
         name="active_seats"
         rules={[{ required: true }]}
       >
-        <Input />
+        <InputNumber style={{ width: "100%" }} />
       </Form.Item>
 
       <Form.Item
@@ -56,7 +56,7 @@ const AssetsFormItems = ({ isEditing = false }: AssetsFormItemsProps) => {
         name="expired_seats"
         rules={[{ required: true }]}
       >
-        <Input />
+        <InputNumber style={{ width: "100%" }} />
       </Form.Item>
 
       <Form.Item
@@ -96,7 +96,7 @@ const AssetsFormItems = ({ isEditing = false }: AssetsFormItemsProps) => {
         name="license_server_seat_count"
         rules={[{ required: true }]}
       >
-        <Input />
+        <InputNumber style={{ width: "100%" }} />
       </Form.Item>
 
       <Form.Item
@@ -128,7 +128,7 @@ const AssetsFormItems = ({ isEditing = false }: AssetsFormItemsProps) => {
         name="osc_seat_count"
         rules={[{ required: true }]}
       >
-        <Input />
+        <InputNumber style={{ width: "100%" }} />
       </Form.Item>
 
       <Form.Item
@@ -136,7 +136,7 @@ const AssetsFormItems = ({ isEditing = false }: AssetsFormItemsProps) => {
         name="renewal_seats"
         rules={[{ required: true }]}
       >
-        <Input />
+        <InputNumber style={{ width: "100%" }} />
       </Form.Item>
 
       <Form.Item
@@ -144,7 +144,7 @@ const AssetsFormItems = ({ isEditing = false }: AssetsFormItemsProps) => {
         name="revoked_seats"
         rules={[{ required: true }]}
       >
-        <Input />
+        <InputNumber style={{ width: "100%" }} />
       </Form.Item>
 
       <Form.Item
@@ -184,7 +184,7 @@ const AssetsFormItems = ({ isEditing = false }: AssetsFormItemsProps) => {
         name="suspended_seats"
         rules={[{ required: true }]}
       >
-        <Input />
+        <InputNumber style={{ width: "100%" }} />
       </Form.Item>
 
       <Form.Item
@@ -192,7 +192,7 @@ const AssetsFormItems = ({ isEditing = false }: AssetsFormItemsProps) => {
         name="terminated_seats"
         rules={[{ required: true }]}
       >
-        <Input />
+        <InputNumber style={{ width: "100%" }} />
       </Form.Item>
 
       <Form.Item

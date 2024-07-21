@@ -13,11 +13,13 @@ import { Space, Table } from "antd";
 interface TransactionsListProps {
   tableProps: any;
   tableTitle: string;
+  hideActions?: boolean;
 }
 
 const TransactionsList = ({
   tableProps,
   tableTitle,
+  hideActions,
 }: TransactionsListProps) => {
   return (
     <List title={tableTitle}>
@@ -35,17 +37,19 @@ const TransactionsList = ({
         <Table.Column dataIndex="reference_code" title="Reference Code" />
         <Table.Column dataIndex="bill_customer_name" title="Billing Customer" />
         <Table.Column dataIndex="organization_code" title="Organization Code" />
-        <Table.Column
-          title="Actions"
-          dataIndex="actions"
-          render={(_, record: BaseRecord) => (
-            <Space>
-              <EditButton hideText size="small" recordItemId={record.id} />
-              <ShowButton hideText size="small" recordItemId={record.id} />
-              <DeleteButton hideText size="small" recordItemId={record.id} />
-            </Space>
-          )}
-        />
+        {!hideActions && (
+          <Table.Column
+            title="Actions"
+            dataIndex="actions"
+            render={(_, record: BaseRecord) => (
+              <Space>
+                <EditButton hideText size="small" recordItemId={record.id} />
+                <ShowButton hideText size="small" recordItemId={record.id} />
+                <DeleteButton hideText size="small" recordItemId={record.id} />
+              </Space>
+            )}
+          />
+        )}
       </Table>
     </List>
   );

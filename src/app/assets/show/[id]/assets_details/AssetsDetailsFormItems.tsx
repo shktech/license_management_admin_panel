@@ -6,14 +6,12 @@ interface AssetsDetailsFormItemsProps {
 }
 
 const AssetsDetailsFormItems = ({ isEditing = false }) => {
-
-  const renderAssetsDetailsLicenseStatusOptions = assetsDetailsLicenseStatusOptions?.map(
-    (option) => (
+  const renderAssetsDetailsLicenseStatusOptions =
+    assetsDetailsLicenseStatusOptions?.map((option) => (
       <Select.Option key={option.value} value={option.value}>
         {option.label}
       </Select.Option>
-    )
-  );
+    ));
 
   return (
     <>
@@ -155,7 +153,7 @@ const AssetsDetailsFormItems = ({ isEditing = false }) => {
         name="seat_number"
         rules={[{ required: true, message: "Please enter the seat number" }]}
       >
-        <InputNumber />
+        <InputNumber style={{ width: "100%" }} />
       </Form.Item>
 
       <Form.Item
@@ -183,7 +181,7 @@ const AssetsDetailsFormItems = ({ isEditing = false }) => {
           { required: true, message: "Please enter the transaction number" },
         ]}
       >
-        <InputNumber />
+        <Input />
       </Form.Item>
       <Form.Item
         label="Vendor Part Number"
@@ -192,7 +190,7 @@ const AssetsDetailsFormItems = ({ isEditing = false }) => {
           { required: true, message: "Please enter the vendor part number" },
         ]}
       >
-        <InputNumber />
+        <Input />
       </Form.Item>
     </>
   );

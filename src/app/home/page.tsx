@@ -49,6 +49,7 @@ const Dashboard = () => {
         <TransactionsList
           tableTitle="Recent Transactions"
           tableProps={tableProps}
+          hideActions
         />
       </section>
     </main>

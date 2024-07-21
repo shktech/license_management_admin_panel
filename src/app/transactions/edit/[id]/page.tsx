@@ -21,7 +21,7 @@ const TransactionEdit = () => {
   return (
     <Edit saveButtonProps={saveButtonProps}>
       <Form {...formProps} layout="vertical" initialValues={formInit}>
-        <TransactionFormItems />
+        <TransactionFormItems isEditing />
       </Form>
     </Edit>
   );
