@@ -2,7 +2,7 @@
 import { Form } from "antd";
 import { useParams } from "next/navigation";
 import AssetsDetailsFormItems from "../../AssetsDetailsFormItems";
-import { Edit, useForm } from "@refinedev/antd";
+import { Edit, ListButton, RefreshButton, useForm } from "@refinedev/antd";
 import dayjs from "dayjs";
 import { Navigate } from "react-router-dom";
 
@@ -34,6 +34,16 @@ const EditAssetDetailsPage = () => {
         meta: { assetid: id },
         onSuccess: () => window.location.replace(`/assets/show/${id}`),
       }}
+      headerButtons={({ listButtonProps, refreshButtonProps }) => (
+        <>
+          <ListButton
+            {...listButtonProps}
+            meta={{ id }}
+            resource={`assets_details`}
+          />
+          <RefreshButton {...refreshButtonProps} />
+        </>
+      )}
     >
       <Form {...formProps} layout="vertical" initialValues={formInit}>
         <AssetsDetailsFormItems isEditing />

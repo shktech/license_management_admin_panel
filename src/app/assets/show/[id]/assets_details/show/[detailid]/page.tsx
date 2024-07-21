@@ -27,31 +27,6 @@ const ShowAssetDetailPage = () => {
     <Show
       isLoading={isLoading}
       title="Asset Details"
-      // headerButtons={
-      //   <div style={{ display: "flex", justifyContent: "flex-end", gap: 5 }}>
-      //     <EditButton
-      //       recordItemId={record?.id}
-      //       resource="assets_details"
-      //       meta={{ detailsid: record?.id, assetid: id }}
-      //       style={{
-      //         backgroundColor: "var(--primary)",
-      //         color: "#fff",
-      //         border: "none",
-      //       }}
-      //     />
-      //     <DeleteButton
-      //       recordItemId={record?.id}
-      //       resource={`assets/${id}/assets_details`}
-      //       style={{
-      //         color: "var(--danger)",
-      //         border: "1px solid var(--danger)",
-      //       }}
-      //       onSuccess={() => {
-      //         window.location.href = `/assets/show/${id}`;
-      //       }}
-      //     />
-      //   </div>
-      // }
       headerButtons={({
         deleteButtonProps,
         editButtonProps,
