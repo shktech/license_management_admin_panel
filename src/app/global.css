@@ -1,5 +1,8 @@
 :root {
   --primary: #178fff;
+  --danger: #ff4d4f;
+  --warning: #faad14;
+  --success: #52c41a;
 }
 
 .ant-layout-sider-children > div {

@@ -57,7 +57,7 @@ const AssetsDetailsList = () => {
                 hideText
                 size="small"
                 recordItemId={record.id}
-                resource="assets_details"
+                resource={`assets/${id}/assets_details`}
                 meta={{ detailsid: record.id, assetid: id }}
               />
             </Space>

@@ -1,6 +1,13 @@
 "use client";
 
-import { Show, TextField } from "@refinedev/antd";
+import {
+  DeleteButton,
+  EditButton,
+  ListButton,
+  RefreshButton,
+  Show,
+  TextField,
+} from "@refinedev/antd";
 import { useShow } from "@refinedev/core";
 import { Typography } from "antd";
 import { useParams } from "next/navigation";
@@ -13,12 +20,75 @@ const ShowAssetDetailPage = () => {
     id: detailid.toString(),
   });
   const { data, isLoading } = queryResult;
-  console.log(queryResult);
 
   const record = data?.data;
 
   return (
-    <Show isLoading={isLoading} title="Asset (Asset Details Below)">
+    <Show
+      isLoading={isLoading}
+      title="Asset Details"
+      // headerButtons={
+      //   <div style={{ display: "flex", justifyContent: "flex-end", gap: 5 }}>
+      //     <EditButton
+      //       recordItemId={record?.id}
+      //       resource="assets_details"
+      //       meta={{ detailsid: record?.id, assetid: id }}
+      //       style={{
+      //         backgroundColor: "var(--primary)",
+      //         color: "#fff",
+      //         border: "none",
+      //       }}
+      //     />
+      //     <DeleteButton
+      //       recordItemId={record?.id}
+      //       resource={`assets/${id}/assets_details`}
+      //       style={{
+      //         color: "var(--danger)",
+      //         border: "1px solid var(--danger)",
+      //       }}
+      //       onSuccess={() => {
+      //         window.location.href = `/assets/show/${id}`;
+      //       }}
+      //     />
+      //   </div>
+      // }
+      headerButtons={({
+        deleteButtonProps,
+        editButtonProps,
+        listButtonProps,
+        refreshButtonProps,
+      }) => (
+        <>
+          {listButtonProps && (
+            <ListButton
+              {...listButtonProps}
+              meta={{ detailsid: record?.id, id }}
+              resource={`assets_details`}
+            />
+          )}
+          {editButtonProps && (
+            <EditButton
+              {...editButtonProps}
+              recordItemId={record?.id}
+              resource="assets_details"
+              meta={{ detailsid: record?.id, assetid: id }}
+            />
+          )}
+          {deleteButtonProps && (
+            <DeleteButton
+              {...deleteButtonProps}
+              recordItemId={record?.id}
+              meta={{ detailsid: record?.id, id }}
+              resource={`assets/${id}/assets_details`}
+              onSuccess={() => {
+                window.location.href = `/assets/show/${id}`;
+              }}
+            />
+          )}
+          <RefreshButton {...refreshButtonProps} meta={{ foo: "bar" }} />
+        </>
+      )}
+    >
       <Title level={5}>Action</Title>
       <TextField value={record?.action} />
       <Title level={5}>Asset ID</Title>
