@@ -4,7 +4,6 @@ import {
   DateField,
   DeleteButton,
   EditButton,
-  getDefaultSortOrder,
   List,
   ShowButton,
 } from "@refinedev/antd";

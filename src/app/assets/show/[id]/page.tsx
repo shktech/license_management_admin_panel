@@ -4,6 +4,7 @@ import { Show, TextField } from "@refinedev/antd";
 import { useShow } from "@refinedev/core";
 import { Typography } from "antd";
 import AssetsDetailsList from "./assets_details/AssetsDetailsList";
+import AssetsTransactionsList from "@app/assets/AssetsTransactionsList";
 
 const { Title } = Typography;
 
@@ -77,6 +78,7 @@ export default function AssetShow() {
       </Show>
       <div style={{ height: 30 }} />
       <AssetsDetailsList />
+      <AssetsTransactionsList />
     </>
   );
 }
