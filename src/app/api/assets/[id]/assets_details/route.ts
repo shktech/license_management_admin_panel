@@ -20,5 +20,5 @@ export async function POST(req: any, res: any) {
   const randomId = uuidv4();
   const assetDetailWithId = { ...newAssetDetail, id: randomId };
   assetsDetails.push(assetDetailWithId);
-  return res.status(200).json(assetDetailWithId);
+  return new Response(JSON.stringify(assetDetailWithId));
 }

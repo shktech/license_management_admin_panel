@@ -17,7 +17,14 @@ const AssetsDetailsList = () => {
   });
 
   return (
-    <List title="Asset Details" breadcrumb={null}>
+    <List
+      title="Asset Details"
+      breadcrumb={null}
+      createButtonProps={{
+        resource: "assets_details",
+        meta: { assetid: id },
+      }}
+    >
       <Table {...tableProps} rowKey="id">
         <Table.Column dataIndex="action" title="Action" />
         <Table.Column dataIndex="license_key" title="License Key" />

@@ -14,7 +14,7 @@ const AssetsDetailsFormItems = ({ isEditing = false }) => {
       >
         <Input />
       </Form.Item>
-
+      {/* 
       <Form.Item
         label="Asset ID"
         name="asset_id"
@@ -181,7 +181,7 @@ const AssetsDetailsFormItems = ({ isEditing = false }) => {
         ]}
       >
         <InputNumber />
-      </Form.Item>
+      </Form.Item> */}
     </>
   );
 };

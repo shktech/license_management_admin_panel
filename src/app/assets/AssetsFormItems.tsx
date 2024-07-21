@@ -1,7 +1,7 @@
 import { DatePicker, Form, Input } from "antd";
 
 interface AssetsFormItemsProps {
-  isEditing: boolean;
+  isEditing?: boolean;
 }
 
 const AssetsFormItems = ({ isEditing = false }: AssetsFormItemsProps) => {

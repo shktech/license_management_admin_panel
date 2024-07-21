@@ -1,15 +1,19 @@
 "use client";
 
-import { Create, useForm } from "@refinedev/antd";
+import { Create, SaveButton, useForm } from "@refinedev/antd";
 import { Form } from "antd";
 import AssetsDetailsFormItems from "../AssetsDetailsFormItems";
 import { useParams } from "next/navigation";
 
 export default function CreateAssetDetailPage() {
-  const { id, detailid } = useParams();
+  const { id } = useParams();
   const { formProps, saveButtonProps, queryResult } = useForm({
     resource: `assets/${id}/assets_details`,
-    id: detailid.toString(),
+    id: id.toString(),
+    action: "create",
+    onMutationSuccess: () => {
+      window.location.href = `/assets/show/${id}`;
+    },
   });
 
   return (
