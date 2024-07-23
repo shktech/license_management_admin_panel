@@ -6,7 +6,7 @@ interface GeneralInformationCardProps {
   headerIcon: React.ReactNode;
   singleColumn?: boolean;
   className?: string;
-  items: { label: string; value: string | number | undefined }[];
+  items: { label: string; value: string | number | boolean | undefined }[];
 }
 
 const GeneralInformationCard: React.FC<GeneralInformationCardProps> = ({
@@ -27,7 +27,7 @@ const GeneralInformationCard: React.FC<GeneralInformationCardProps> = ({
           <Grid item xs={singleColumn ? 12 : 6} key={index}>
             <div className="flex justify-between px-8 py-1">
               <div className="text-sm font-medium">{item.label}</div>
-              <div className="text-sm">{item.value || ""}</div>
+              <div className="text-sm">{item.value?.toString() || ""}</div>
             </div>
           </Grid>
         ))}

@@ -86,6 +86,7 @@ const Page = () => {
                     singleColumn={true}
                     className="bg-gray px-2 py-2"
                     items={[
+                      { label: "Asset Id", value: asset?.id },
                       { label: "Organization", value: asset?.organization },
                       {
                         label: "Asset number (LicKey/Srl#)",

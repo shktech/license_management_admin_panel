@@ -9,6 +9,9 @@ export interface FieldConfig {
   rules?: any;
   type?: 'text' | 'date' | 'dropdown'| 'number';
   options?: { value: string; label: string }[];
+  resource?: string;
+  valueKey?: string;
+  labelKey?: string;
 }
 
 export interface GenericFormProps {

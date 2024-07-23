@@ -16,34 +16,32 @@ const Page = () => {
   const columns = useMemo<MRT_ColumnDef<Asset>[]>(
     () => [
       {
+        accessorKey: "id",
+        header: "Asset ID",
+      },
+      {
         accessorKey: "license_key",
         header: "Asset Number (LicKey/Srl#)",
-        size: 150,
       },
       {
         accessorKey: "organization",
         header: "Organization",
-        size: 150,
       },
       {
         accessorKey: "osc_product.osc_part_number",
         header: "Product Part Number",
-        size: 150,
       },
       {
         accessorKey: "osc_product.product_type",
         header: "Asset Type",
-        size: 150,
       },
       {
         accessorKey: "osc_product.vendor_name",
         header: "Vender Name",
-        size: 120,
       },
       {
         accessorKey: "osc_product.product_name",
         header: "Vendor Part",
-        size: 200,
       },
     ],
     []

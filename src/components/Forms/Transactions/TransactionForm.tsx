@@ -8,7 +8,7 @@ import PartnerFormFields from "../Partners/PartnerFormFields";
 import GenericForm from "../GenericForm";
 
 export type TransactionFormProps = GenericFormProps & {
-  transaction: Transaction;
+  transaction?: Transaction;
   onStepChange: (isLast: boolean) => void;
 };
 
@@ -20,10 +20,11 @@ const TransactionForm = (props: TransactionFormProps) => {
   }, [step, props]);
 
   const handleNext = async () => {
-    const isValid = await props.trigger(
-      TransactionFormFields.map((config: FieldConfig) => config.name)
-    );
-    if (isValid && step < 3) {
+    // const isValid = await props.trigger(
+    //   TransactionFormFields.map((config: FieldConfig) => config.name)
+    // );
+    // console.log(isValid)
+    if (step < 3) {
       setStep(step + 1);
     }
   };

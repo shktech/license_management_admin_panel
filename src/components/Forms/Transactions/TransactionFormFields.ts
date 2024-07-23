@@ -1,4 +1,5 @@
 import { FieldConfig } from "../FormControlWrapper";
+import { useFetchOptions } from "@/hooks/useFetchOptions";
 
 const TransactionFormFields: FieldConfig[] = [
     {
@@ -72,7 +73,11 @@ const TransactionFormFields: FieldConfig[] = [
         label: "Product part number",
         placeholder: "Product part number",
         rules: { required: "Part number is required" },
-        type: "text",
+        // type: "text",
+        type: "dropdown",
+        resource: "products",
+        valueKey: "osc_part_number",
+        labelKey: "osc_part_number"
     },
     {
         name: "osc_product.vendor_name",
@@ -101,6 +106,20 @@ const TransactionFormFields: FieldConfig[] = [
         placeholder: "Transaction quantity",
         rules: { required: "Transaction quantity is required" },
         type: "number",
+    },
+    {
+        name: "start_date",
+        label: "Start date",
+        placeholder: "Transaction quantity",
+        rules: { required: "Start date is required" },
+        type: "date",
+    },
+    {
+        name: "end_date",
+        label: "End date",
+        placeholder: "Transaction quantity",
+        rules: { required: "End date is required" },
+        type: "date",
     },
 ];
 

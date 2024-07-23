@@ -1,14 +1,14 @@
 export const mockAssets = [
   {
     id: "660e8400-e29b-41d4-a716-100000",
-    active_seats: 1,
+    active_seats: 0,
     created_by: 1,
     creation_date: "2024-01-15",
     active: true,
     end_date: "2026-01-14",
     expired_seats: 0,
-    license_key: "XYZ-1234-5678-ABCD",
-    license_server_seat_count: 1,
+    license_key: "",
+    license_server_seat_count: 0,
     organization: "PAI",
     osc_seat_count: 1,
     renewal_seats: 0,
@@ -24,7 +24,7 @@ export const mockAssets = [
       duration: "2YR",
       start_date: "2024-07-01",
       end_date: "2026-06-30",
-      status: "Draft"
+      status: "Waiting for validation"
     },
     osc_product: {
       organization: "PAI",
@@ -46,18 +46,18 @@ export const mockAssets = [
       eval_set_name: "EvalSet1",
       renewal_set_name: "RenewalSet1",
       new_set_name: "NewSet1",
-      enabled_flag: true,
+      active: true,
     },
     seats: [
-      {
-        seat_number: "1",
-        osc_license_status: "Active",
-        osc_start_date: "2024-07-01",
-        osc_end_date: "2026-06-30",
-        license_server_status: "Active",
-        license_server_start_date: "2024-07-01",
-        license_server_end_date: "2026-06-30",
-      }
+      // {
+      //   seat_number: "1",
+      //   osc_license_status: "Active",
+      //   osc_start_date: "2024-07-01",
+      //   osc_end_date: "2026-06-30",
+      //   license_server_status: "Active",
+      //   license_server_start_date: "2024-07-01",
+      //   license_server_end_date: "2026-06-30",
+      // }
     ]
   },
   {
@@ -107,7 +107,7 @@ export const mockAssets = [
       eval_set_name: "EvalSet1",
       renewal_set_name: "RenewalSet1",
       new_set_name: "NewSet1",
-      enabled_flag: true,
+      active: true,
     },
     seats: [
       {
@@ -168,7 +168,7 @@ export const mockAssets = [
       eval_set_name: "EvalSet1",
       renewal_set_name: "RenewalSet1",
       new_set_name: "NewSet1",
-      enabled_flag: true,
+      active: true,
     },
     seats: [
       {
@@ -229,7 +229,7 @@ export const mockAssets = [
       eval_set_name: "EvalSet1",
       renewal_set_name: "RenewalSet1",
       new_set_name: "NewSet1",
-      enabled_flag: true,
+      active: true,
     },
     seats: [
       {

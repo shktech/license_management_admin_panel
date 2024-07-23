@@ -96,7 +96,7 @@ const TransactionShow = () => {
                 },
                 {
                   label: "Asset type",
-                  value: "",
+                  value: transaction?.osc_product?.product_type,
                 },
                 {
                   label: "Vendor name",
@@ -127,6 +127,18 @@ const TransactionShow = () => {
               headerIcon={<AssetIcon />}
               className="bg-gray px-8 py-4"
               items={[
+                {
+                  label: "Asset ID",
+                  value: transaction?.asset?.id,
+                },
+                {
+                  label: "Asset number (License Key / Serial Number)",
+                  value: transaction?.asset?.license_key,
+                },
+                {
+                  label: "Active",
+                  value: transaction?.asset?.active,
+                },
                 {
                   label: "Product part number",
                   value: transaction?.osc_product?.osc_part_number,
