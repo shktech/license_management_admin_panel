@@ -1,40 +1,18 @@
-import {
-  BuildOutlined,
-  ContactsOutlined,
-  DashboardOutlined,
-  DatabaseOutlined,
-  FileProtectOutlined,
-  FileSearchOutlined,
-  FileTextOutlined,
-  FolderViewOutlined,
-  MailOutlined,
-  MoneyCollectFilled,
-  MonitorOutlined,
-  ProductOutlined,
-  ScheduleOutlined,
-  SettingOutlined,
-  SubnodeOutlined,
-  TransactionOutlined,
-  UsergroupAddOutlined,
-  UserOutlined,
-  UserSwitchOutlined,
-} from "@ant-design/icons";
+import { ResourceProps } from "@refinedev/core";
 
-export const dashboardResources = [
+export const dashboardResources: ResourceProps[] = [
   {
     name: "dashboard",
-    list: "/home",
+    list: "/dashboard",
     meta: {
       isDashboard: true,
       label: "Dashboard",
-      icon: <DashboardOutlined />,
     },
   },
   {
     name: "transaction",
     meta: {
       label: "Transaction",
-      icon: <TransactionOutlined />,
     },
   },
   {
@@ -48,7 +26,6 @@ export const dashboardResources = [
       label: "Transactions",
       parent: "transaction",
       warnWhenUnsavedChanges: true,
-      icon: <TransactionOutlined />,
     },
   },
   {
@@ -59,14 +36,12 @@ export const dashboardResources = [
       label: "Collection",
       disabled: true,
       hide: true,
-      icon: <MoneyCollectFilled />,
     },
   },
   {
     name: "mastermgmt",
     meta: {
       label: "Master MGMT",
-      icon: <DatabaseOutlined />,
     },
   },
   {
@@ -80,7 +55,6 @@ export const dashboardResources = [
       label: "Assets",
       parent: "mastermgmt",
       warnWhenUnsavedChanges: true,
-      icon: <BuildOutlined />,
     },
   },
   {
@@ -108,7 +82,6 @@ export const dashboardResources = [
       label: "Products",
       parent: "mastermgmt",
       warnWhenUnsavedChanges: true,
-      icon: <ProductOutlined />,
     },
   },
   {
@@ -119,7 +92,6 @@ export const dashboardResources = [
       parent: "mastermgmt",
       disabled: true,
       hide: true,
-      icon: <UsergroupAddOutlined />,
     },
   },
   {
@@ -136,7 +108,6 @@ export const dashboardResources = [
     meta: {
       label: "Lookups",
       parent: "maintenance",
-      icon: <FolderViewOutlined />,
     },
   },
   {
@@ -145,7 +116,6 @@ export const dashboardResources = [
     meta: {
       label: "License Code",
       parent: "maintenance",
-      icon: <FileTextOutlined />,
     },
   },
   {
@@ -154,7 +124,6 @@ export const dashboardResources = [
     meta: {
       label: "Email Templates",
       parent: "maintenance",
-      icon: <MailOutlined />,
     },
   },
   {
@@ -163,7 +132,6 @@ export const dashboardResources = [
     meta: {
       label: "Unsubscribe",
       parent: "maintenance",
-      icon: <SubnodeOutlined />,
     },
   },
   {
@@ -172,7 +140,6 @@ export const dashboardResources = [
       label: "Reports",
       disabled: true,
       hide: true,
-      icon: <FileSearchOutlined />,
     },
   },
   {
@@ -181,7 +148,6 @@ export const dashboardResources = [
     meta: {
       label: "Business",
       parent: "reports",
-      icon: <FileProtectOutlined />,
     },
   },
   {
@@ -190,7 +156,6 @@ export const dashboardResources = [
     meta: {
       label: "Logs",
       parent: "reports",
-      icon: <MonitorOutlined />,
     },
   },
   {
@@ -199,7 +164,6 @@ export const dashboardResources = [
     meta: {
       label: "Schedule View",
       parent: "reports",
-      icon: <ScheduleOutlined />,
     },
   },
   {
@@ -208,7 +172,6 @@ export const dashboardResources = [
       label: "Settings",
       disabled: true,
       hide: true,
-      icon: <SettingOutlined />,
     },
   },
   {
@@ -217,7 +180,6 @@ export const dashboardResources = [
     meta: {
       label: "Profile",
       parent: "settings",
-      icon: <UserSwitchOutlined />,
     },
   },
   {
@@ -226,7 +188,6 @@ export const dashboardResources = [
     meta: {
       label: "User",
       parent: "settings",
-      icon: <UserOutlined />,
     },
   },
   {
@@ -235,7 +196,6 @@ export const dashboardResources = [
     meta: {
       label: "Org Setup",
       parent: "settings",
-      icon: <ContactsOutlined />,
     },
   },
 ];

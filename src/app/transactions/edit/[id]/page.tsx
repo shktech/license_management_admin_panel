@@ -1,28 +1,52 @@
 "use client";
-import TransactionFormItems from "@app/transactions/TransactionFormItems";
-import { Edit, useForm } from "@refinedev/antd";
-import { Form } from "antd";
-import dayjs from "dayjs";
+
+import React, { useEffect, useState } from "react";
+import { useForm } from "@refinedev/react-hook-form";
+import { Edit } from "@refinedev/mui";
+import { Transaction } from "@/types/types";
+import TransactionForm from "@components/Forms/Transactions/TransactionForm";
+import Loader from "@components/common/Loader";
 
 const TransactionEdit = () => {
-  const { formProps, saveButtonProps, queryResult } = useForm({});
+  const [isLastStep, setIsLastStep] = useState(false);
+  const {
+    saveButtonProps,
+    refineCore: { formLoading, queryResult },
+    control,
+    reset,
+    trigger,
+    formState: { errors },
+  } = useForm<Transaction>();
 
-  const formInit = {
-    ...queryResult?.data?.data,
-    transaction_date: dayjs(),
-    creation_date: dayjs(),
-    last_update_date: dayjs(),
-    notification_date: dayjs(),
-    source_reference_date: dayjs(),
-    start_date: dayjs(),
-    end_date: dayjs(),
+  const transaction: Transaction = queryResult?.data?.data as Transaction;
+
+  useEffect(() => {
+    if (!formLoading && transaction) {
+      reset({ ...transaction });
+    }
+  }, [formLoading, transaction]);
+
+  const onSubmit = (data: any) => {
+    console.log("Form Data:", data);
   };
 
   return (
-    <Edit saveButtonProps={saveButtonProps}>
-      <Form {...formProps} layout="vertical" initialValues={formInit}>
-        <TransactionFormItems />
-      </Form>
+    <Edit
+      canDelete={false}
+      breadcrumb={false}
+      headerButtons={<></>}
+      saveButtonProps={{ ...saveButtonProps, hidden: !isLastStep }}
+    >
+      {formLoading ? (
+        <Loader />
+      ) : (
+        <div className="bg-white px-8 rounded-xl">
+          <TransactionForm
+            {...{ control, errors, trigger, transaction }}
+            onStepChange={(isLast) => setIsLastStep(isLast)}
+          />
+        </div>
+      )}
     </Edit>
   );
 };

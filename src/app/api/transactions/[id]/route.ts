@@ -7,6 +7,7 @@ export async function GET(
   req: NextRequest,
   { params }: { params: { id: string } }
 ) {
+  console.log("GET HERE");
   const transaction = transactions.find(
     (transaction) => transaction.id === params.id
   );
@@ -17,12 +18,12 @@ export async function PATCH(
   req: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  const updatedTransaction = req.body as any;
+  // const updatedTransaction = req.body as any;
   const index = transactions.findIndex(
     (transaction) => transaction.id === params.id
   );
-  transactions[index] = updatedTransaction;
-  return NextResponse.json(updatedTransaction);
+  // transactions[index] = updatedTransaction;
+  return NextResponse.json(transactions[index]);
 }
 
 export async function DELETE(

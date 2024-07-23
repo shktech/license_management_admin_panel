@@ -1,7 +1,0 @@
-:root {
-  --primary: #178fff;
-}
-
-.ant-layout-sider-children > div {
-  padding: 0 !important;
-}

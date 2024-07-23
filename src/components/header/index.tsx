@@ -1,65 +1,83 @@
-"use client";
+import DropdownMessage from './DropdownMessage';
+import DropdownNotification from './DropdownNotification';
+import DropdownUser from './DropdownUser';
+import DarkModeSwitcher from './DarkModeSwitcher';
 
-import { ColorModeContext } from "@contexts/color-mode";
-import type { RefineThemedLayoutV2HeaderProps } from "@refinedev/antd";
-import { useGetIdentity } from "@refinedev/core";
-import {
-  Layout as AntdLayout,
-  Avatar,
-  Space,
-  Switch,
-  theme,
-  Typography,
-} from "antd";
-import React, { useContext } from "react";
-
-const { Text } = Typography;
-const { useToken } = theme;
-
-type IUser = {
-  id: number;
-  name: string;
-  avatar: string;
-};
-
-export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({
-  sticky = true,
+const Header = (props: {
+  sidebarOpen: string | boolean | undefined;
+  setSidebarOpen: (arg0: boolean) => void;
 }) => {
-  const { token } = useToken();
-  const { data: user } = useGetIdentity<IUser>();
-  const { mode, setMode } = useContext(ColorModeContext);
-
-  const headerStyles: React.CSSProperties = {
-    backgroundColor: token.colorBgElevated,
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    padding: "0px 24px",
-    height: "64px",
-  };
-
-  if (sticky) {
-    headerStyles.position = "sticky";
-    headerStyles.top = 0;
-    headerStyles.zIndex = 1;
-  }
-
   return (
-    <AntdLayout.Header style={headerStyles}>
-      <Space>
-        <Switch
-          checkedChildren="🌛"
-          unCheckedChildren="🔆"
-          onChange={() => setMode(mode === "light" ? "dark" : "light")}
-          defaultChecked={mode === "dark"}
-        />
-        {(user?.name || user?.avatar) && (
-          <Space style={{ marginLeft: "8px" }} size="middle">
-            {user?.name && <Text strong>{user.name}</Text>}
-            {user?.avatar && <Avatar src={user?.avatar} alt={user?.name} />}
-          </Space>
-        )}
-      </Space>
-    </AntdLayout.Header>
+    <header className="sticky top-0 z-999 flex w-full my-header">
+      <div className="flex items-center justify-between w-full px-4 py-4 md:px-6 2xl:px-11">
+        <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
+          {/* <!-- Hamburger Toggle BTN --> */}
+          <button
+            aria-controls="sidebar"
+            onClick={(e) => {
+              e.stopPropagation();
+              props.setSidebarOpen(!props.sidebarOpen);
+            }}
+            className="z-99999 block rounded-sm border border-stroke bg-white p-1.5 shadow-sm dark:border-strokedark dark:bg-boxdark lg:hidden"
+          >
+            <span className="relative block h-5.5 w-5.5 cursor-pointer">
+              <span className="du-block absolute right-0 h-full w-full">
+                <span
+                  className={`relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-[0] duration-200 ease-in-out dark:bg-white ${!props.sidebarOpen && '!w-full delay-300'
+                    }`}
+                ></span>
+                <span
+                  className={`relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-150 duration-200 ease-in-out dark:bg-white ${!props.sidebarOpen && 'delay-400 !w-full'
+                    }`}
+                ></span>
+                <span
+                  className={`relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-200 duration-200 ease-in-out dark:bg-white ${!props.sidebarOpen && '!w-full delay-500'
+                    }`}
+                ></span>
+              </span>
+              <span className="absolute right-0 h-full w-full rotate-45">
+                <span
+                  className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black delay-300 duration-200 ease-in-out dark:bg-white ${!props.sidebarOpen && '!h-0 !delay-[0]'
+                    }`}
+                ></span>
+                <span
+                  className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-black duration-200 ease-in-out dark:bg-white ${!props.sidebarOpen && '!h-0 !delay-200'
+                    }`}
+                ></span>
+              </span>
+            </span>
+          </button>
+          {/* <!-- Hamburger Toggle BTN --> */}
+
+          {/* <Link className="block flex-shrink-0 lg:hidden" to="/">
+            <img src={LogoIcon} alt="Logo" />
+          </Link> */}
+        </div>
+
+        <div className="flex-grow"></div> {/* Add this div to take up remaining space */}
+
+        <div className="flex items-center gap-3 2xsm:gap-7">
+          <ul className="flex items-center gap-2 2xsm:gap-4">
+            {/* <!-- Dark Mode Toggler --> */}
+            {/* <DarkModeSwitcher /> */}
+            {/* <!-- Dark Mode Toggler --> */}
+
+            {/* <!-- Notification Menu Area --> */}
+            {/* <DropdownNotification /> */}
+            {/* <!-- Notification Menu Area --> */}
+
+            {/* <!-- Chat Notification Area --> */}
+            {/* <DropdownMessage /> */}
+            {/* <!-- Chat Notification Area --> */}
+          </ul>
+
+          {/* <!-- User Area --> */}
+          <DropdownUser />
+          {/* <!-- User Area --> */}
+        </div>
+      </div>
+    </header>
   );
 };
+
+export default Header;
